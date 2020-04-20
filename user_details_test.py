@@ -85,7 +85,19 @@ class TestDetails(unittest.TestCase):
         Details.details_list = []
 
 
-    def test
+    def test_save_details(self):
+        '''
+        Test case to check if we can save details to the details list.
+        '''
+        self.new_detail.save_detail()
+        instagram = Details('Deyalasoul', 'Instagram', 'Deyala', 'Roseflower01')
+        instagram.save_detail()
+        self.assertEqual(len(Details.details_list), 2)
 
+
+    def test_display_details(self):
+        '''
+        Test case to test if objects show.
+        '''
 
 
