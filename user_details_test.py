@@ -41,3 +41,51 @@ class TestUser(unittest.TestCase):
 
 
 
+    def test_check_user(self):
+        '''
+        Test whether login feature is functioning.
+        '''
+        self.new_user = User('Dolphine', 'Atieno', 'Dolphine0123')
+        self.new_user.save_user()
+        user2 = User('Israel', 'Hawi', '@israel01')
+        user2.save_user()
+
+        for user in User.users_list:
+            if user.first_name == user2.first_name and user.password == user2.password:
+                current_user = user.first_name
+        return current_user
+
+        self.assertEqual(current_user, User.check_user(user2,password, user2.first_name))
+
+class TestDetails(unittest.TestCase):
+    '''
+    Test class that defines test cases for the credentials class behaviours.
+    Args:
+    unittest.TestCase: TestCase class that helps in creating test cases.
+    '''
+    def setUp(self):
+        '''
+        set up method to run before each test cases.
+        '''
+        self.new_detail = Details('Dolphine', 'Facebook', 'dalphine', 'atieno1997')
+
+    def test_init_(self):
+        '''
+        Test case to check if details created is properly done.
+        '''
+        self.assertEqual(self.new_detail.user_name, 'Dolphine')
+        self.assertEqual(self.new_detail.website_name, 'Facebook')
+        self.assertEqual(self.new_detail.account_name, 'dalphine')
+        self.assertEqual(self.new_detail.password, 'atieno1997')
+
+    def tearDown(self):
+        '''
+        This method clears users details after every test.
+        '''
+        Details.details_list = []
+
+
+    def test
+
+
+

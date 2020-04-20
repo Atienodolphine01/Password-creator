@@ -36,3 +36,26 @@ class user:
 
 class Details:
     '''
+    In this class the user maybe able to enter their other accounts details and save passwords and information.
+    '''
+
+    details_list = []
+    users_details_list = []
+
+    def _init_(self, user_name, website_name, account_name, password):
+        '''
+        _init_method us define our object's properties.
+        '''
+
+        self.user_name = user_name
+        self.website_name = website_name
+        self.account_name = account_name
+        self.password = password
+
+
+    def save_details(self):
+        '''
+        This method save details in the details_list.
+        '''
+
+        Details.details_list.append(self)
