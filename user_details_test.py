@@ -99,5 +99,10 @@ class TestDetails(unittest.TestCase):
         '''
         Test case to test if objects show.
         '''
-
+        self.new_detail.save_detail()
+        instagram = Details('Deyalasoul', 'Instagram', 'Deyala', 'Roseflower01')
+        instagram.save_detail()
+        twitter = Details('Bill', 'Twitter', 'billy', 'billyboss')
+        twitter.save_detail()
+        self.assertEqual(len(Details.display_detail(instagram.user_name)), 1)
 

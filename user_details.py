@@ -59,3 +59,6 @@ class Details:
         '''
 
         Details.details_list.append(self)
+
+
+    def generate_password(self)
