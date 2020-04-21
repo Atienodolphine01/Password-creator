@@ -22,9 +22,9 @@ class TestUser(unittest.TestCase):
         '''
         Test case to see if the object is initialised properly.
         '''
-        self.assertEqual(self.new_user.first_name, 'Dolphine')
-        self.assertEqual(self.new_user.last_name, 'Atieno')
-        self.assertEqual(self.new_user.password, 'Dolphine0123')
+        self.assertEqual(self.new_user.first_name, "Dolphine")
+        self.assertEqual(self.new_user.last_name, "Atieno")
+        self.assertEqual(self.new_user.password, "Dolphine0123")
 
     def tearDown(self):
         '''
@@ -38,7 +38,7 @@ class TestUser(unittest.TestCase):
         Test case to confirm if user object is saved to the users list.
         '''
         self.new_user.save_user()
-        self.assertEqual(len(User.users_list),1)
+        self.assertEqual(len(User.users_list), 1)
 
 
 
@@ -68,16 +68,16 @@ class TestDetails(unittest.TestCase):
         '''
         set up method to run before each test cases.
         '''
-        self.new_detail = Details('Dolphine', 'Facebook', 'dalphine', 'atieno1997')
+        self.new_detail = Details("Dolphine", "Facebook", "dalphine", "atieno1997")
 
-    def test_init_(self):
+    def test__init__(self):
         '''
         Test case to check if details created is properly done.
         '''
-        self.assertEqual(self.new_detail.user_name, 'Dolphine')
-        self.assertEqual(self.new_detail.website_name, 'Facebook')
-        self.assertEqual(self.new_detail.account_name, 'dalphine')
-        self.assertEqual(self.new_detail.password, 'atieno1997')
+        self.assertEqual(self.new_detail.user_name, "Dolphine")
+        self.assertEqual(self.new_detail.website_name, "Facebook")
+        self.assertEqual(self.new_detail.account_name, "dalphine")
+        self.assertEqual(self.new_detail.password, "atieno1997")
 
     def tearDown(self):
         '''
@@ -115,7 +115,7 @@ class TestDetails(unittest.TestCase):
         self.new_detail.save_detail()
         twitter = Details('Bill', 'Twitter', 'billy', 'billyboss')
         twitter.save_detail()
-        detail_exist = Details.test_find_my_website_name('Twitter')
+        detail_exist = Details.find_my_website_name('Twitter')
         self.assertEqual(detail_exist, twitter)
 
 

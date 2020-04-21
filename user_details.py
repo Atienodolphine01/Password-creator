@@ -46,7 +46,7 @@ class Details:
     details_list = []
     users_details_list = []
 
-    def _init_(self, user_name, website_name, account_name, password):
+    def __init__(self, user_name, website_name, account_name, password):
         '''
         _init_method us define our object's properties.
         '''
