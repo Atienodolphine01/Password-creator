@@ -4,7 +4,6 @@ import pyperclip
 from user_details import Details
 from user_details import User
 
-
 class TestUser(unittest.TestCase):
     '''
     Test class that defines test cases for the user class behaviours.
@@ -17,7 +16,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each check if pyperclip is installedtest cases.
         '''
-        self.new_user = user('Dolphine', 'Atieno', 'Dolphine0123')
+        self.new_user = User('Dolphine', 'Atieno', 'Dolphine0123')
 
     def test_init_(self):
         '''

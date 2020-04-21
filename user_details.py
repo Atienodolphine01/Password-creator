@@ -2,8 +2,7 @@ import random
 import string
 import pyperclip
 
-
-class user:
+class User:
     '''
     Class that generates instance of user details
     '''
@@ -58,7 +57,7 @@ class Details:
         self.password = password
 
 
-    def save_details(self):
+    def save_detail(self):
         '''
         This method save details in the details_list.
         '''
@@ -81,7 +80,7 @@ class Details:
         return password
 
 
-    def del_details(self):
+    def del_detail(self):
         '''
         Method that deletes a saved detail from the detail_list
         '''
