@@ -1,3 +1,8 @@
+import random
+import string
+import pyperclip
+
+
 class user:
     '''
     Class that generates instance of user details
@@ -81,3 +86,45 @@ class Details:
         Method that deletes a saved detail from the detail_list
         '''
         Details.details_list.remove(self)
+
+
+    @classmethod
+    def display_detail(cls, user_name):
+        '''
+        Class method to show the list of details saved
+        '''
+        users_details_list = []
+        for detail in cls.details_list:
+            if detail.user_name == user_name:
+                users_details_list.append(detail)
+        return users_details_list
+
+
+    @classmethod
+    def find_my_website_name(cls, website_name):
+        '''
+        Class method that takes a website name and returns the details that matches that website.
+        '''
+        for detail in cls.details_list:
+            if detail.website_name == website_name:
+        return detail
+
+
+    @classmethod
+    def copy_detail(cls, website_name):
+        '''
+        Method copies credential details after user has entered their website_name.
+        '''
+        find_detail = Details.find_my_website_name(website_name)
+        return pyperclip.copy(find_detail.password)
+
+
+    @classmethod
+    def detail_exist(cls, website_name):
+        '''
+        Class method that checks if a detail exists.
+        '''
+        for detail in cls.details_list:
+            if detail.website_name == website_name:
+                return True
+        return False
