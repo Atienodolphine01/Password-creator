@@ -119,4 +119,23 @@ class TestDetails(unittest.TestCase):
         detail_exist = Details.test_find_my_website_name('Twitter')
         self.assertEqual(detail_exist, twitter)
 
-        
+
+    def test_copy_details(self):
+        '''
+        Test casse to test if the copy detail function copies the correct detail of the user.
+        '''
+        self.new_detail.save_detail()
+        facebook = Details('Dolphine', 'Facebook', 'dalphine', 'atieno1997')
+        facebook.save_detail()
+        find_detail = None
+        for detail in Details.users_details_list:
+            find_detail = Details.find_my_website_name(detail.website_name)
+            pyperclip.copy(find_detail.password)
+        Detail.copy_detail(self.new_detail.website_name)
+        self.assertEqual('atieno1997', pyperclip.paste())
+
+
+    def test_delete_detail(self):
+        '''
+        Test to see if we can delete a saved detail
+        '''
