@@ -80,3 +80,4 @@ class Details:
         '''
         Method that deletes a saved detail from the detail_list
         '''
+        Details.details_list.remove(self)

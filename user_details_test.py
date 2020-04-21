@@ -1,6 +1,8 @@
 import unittest
 import user_details_test, user_details_test
+import pyperclip
 from user_details import Details
+from user_details import User
 
 
 class TestUser(unittest.TestCase):
@@ -116,3 +118,5 @@ class TestDetails(unittest.TestCase):
         twitter.save_detail()
         detail_exist = Details.test_find_my_website_name('Twitter')
         self.assertEqual(detail_exist, twitter)
+
+        
