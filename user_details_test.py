@@ -139,3 +139,25 @@ class TestDetails(unittest.TestCase):
         '''
         Test to see if we can delete a saved detail
         '''
+        self.new_detail.save_detail()
+        new_details = Details('Bill', 'Twitter', 'billy', 'billyboss')
+        new_detail.save_detail()
+
+        self.new_detail.del_detail()
+        self.assertEqual(len(Details.details_list), 1)
+
+
+    def test_credential_exists(self):
+        '''
+        Test case to confirm if a detail exist in the detail_list.
+        '''
+        self.new_detail.save_detail()
+        test_detail = Details('Bill', 'Twitter', 'billy', 'billyboss')
+        test_detail.save_detail()
+
+        detail_exists = Details.detail_exist('Twitter')
+        self.assertTrue(detail_exists)
+
+
+if __name__ == '__main__':
+    unittest.main()
