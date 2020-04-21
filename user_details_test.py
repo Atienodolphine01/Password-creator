@@ -16,15 +16,15 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each check if pyperclip is installedtest cases.
         '''
-        self.new_user = User('Dolphine', 'Atieno', 'Dolphine0123')
+        self.new_user = User('Dolphine', 'Atieno', 'dolphine0123') #create user object
 
-    def test_init_(self):
+    def test__init__(self):
         '''
         Test case to see if the object is initialised properly.
         '''
         self.assertEqual(self.new_user.first_name, "Dolphine")
         self.assertEqual(self.new_user.last_name, "Atieno")
-        self.assertEqual(self.new_user.password, "Dolphine0123")
+        self.assertEqual(self.new_user.password, "dolphine0123")
 
     def tearDown(self):
         '''
@@ -46,7 +46,7 @@ class TestUser(unittest.TestCase):
         '''
         Test whether login feature is functioning.
         '''
-        self.new_user = User('Dolphine', 'Atieno', 'Dolphine0123')
+        self.new_user = User('Dolphine', 'Atieno', 'dolphine0123')
         self.new_user.save_user()
         user2 = User('Israel', 'Hawi', '@israel01')
         user2.save_user()
@@ -130,7 +130,7 @@ class TestDetails(unittest.TestCase):
         for detail in Details.users_details_list:
             find_detail = Details.find_my_website_name(detail.website_name)
             pyperclip.copy(find_detail.password)
-        Detail.copy_detail(self.new_detail.website_name)
+        Details.copy_detail(self.new_detail.website_name)
         self.assertEqual('atieno1997', pyperclip.paste())
 
 
@@ -139,7 +139,7 @@ class TestDetails(unittest.TestCase):
         Test to see if we can delete a saved detail
         '''
         self.new_detail.save_detail()
-        new_details = Details('Bill', 'Twitter', 'billy', 'billyboss')
+        new_detail = Details('Bill', 'Twitter', 'billy', 'billyboss')
         new_detail.save_detail()
 
         self.new_detail.del_detail()

@@ -30,13 +30,19 @@ def generate_password(self):
     gen_password = Details.generate_password(self)
     return gen_password
 
-
 def create_detail(user_name, website_name, account_name, password):
     '''
     Function creates new user details.
     '''
     new_detail = Details(user_name, website_name, account_name, password)
     return new_detail
+
+
+def save_detail(detail):
+    '''
+    Function to save a new created detail.
+    '''
+    Details.save_detail(detail)
 
 
 def display_details(username):
@@ -97,7 +103,7 @@ def main():
             print('\n')
             print(f"New account created for {first_name} {last_name} using password {password}")
 
-       elif short_code == 'li':
+        elif short_code == 'li':
             print("-"*60)
             print('\n')
             print("Enter your account details to log in.")
@@ -137,8 +143,9 @@ def main():
                                 password = generate_password(password)
                                 break
                             elif password_choice == 'ex':
-                                else:
-                                    print("You entered the wrong option, please try again.")
+                                break
+                            else:
+                                print("You entered the wrong option, please try again.")
                         save_detail(create_detail(user_name, website_name, account_name, password))
                         print('\n')
                         print(f"Credential created: \n Website name: {website_name} - Account Username: {account_name} - Password: {password} ")
