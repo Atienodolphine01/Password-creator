@@ -62,3 +62,21 @@ class Details:
 
 
     def generate_password(self)
+        '''
+        Function to generate a password where a user can create a password based on their length of choice.
+        '''
+        chars = "abcdefghijklmnopqrstuvwxyziABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890^?!?$%&/()=?`'+#*'~';:_,.-<>|"
+        password = ""
+
+        length = int(input("[*] Input Password Length: "))
+        while len(password) != length:
+            password = password + random.choice(chars)
+            if len(password) == length:
+                print("Password: %s" % password)
+        return password
+
+
+    def del_details(self):
+        '''
+        Method that deletes a saved detail from the detail_list
+        '''

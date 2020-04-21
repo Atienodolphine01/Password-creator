@@ -106,3 +106,13 @@ class TestDetails(unittest.TestCase):
         twitter.save_detail()
         self.assertEqual(len(Details.display_detail(instagram.user_name)), 1)
 
+
+    def test_find_my_website_name(self):
+        '''
+        Test case to test if we can search credential by site_name and return the correct credential.
+        '''
+        self.new_detail.save_detail()
+        twitter = Details('Bill', 'Twitter', 'billy', 'billyboss')
+        twitter.save_detail()
+        detail_exist = Details.test_find_my_website_name('Twitter')
+        self.assertEqual(detail_exist, twitter)
