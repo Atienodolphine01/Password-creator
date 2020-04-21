@@ -107,7 +107,7 @@ class Details:
         '''
         for detail in cls.details_list:
             if detail.website_name == website_name:
-        return detail
+                return detail
 
 
     @classmethod
