@@ -66,7 +66,7 @@ class Details:
         Details.details_list.append(self)
 
 
-    def generate_password(self)
+    def generate_password(self):
         '''
         Function to generate a password where a user can create a password based on their length of choice.
         '''
