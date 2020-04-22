@@ -16,7 +16,7 @@ class TestUser(unittest.TestCase):
         '''
         Set up method to run before each check if pyperclip is installedtest cases.
         '''
-        self.new_user = User('Dolphine', 'Atieno', 'dolphine0123') #create user object
+        self.new_user = User('Dolphine', 'Atieno', 'dolphine0123')
 
     def test__init__(self):
         '''
@@ -91,7 +91,7 @@ class TestDetails(unittest.TestCase):
         Test case to check if we can save details to the details list.
         '''
         self.new_detail.save_detail()
-        instagram = Details('Deyalasoul', 'Instagram', 'Deyala', 'Roseflower01')
+        instagram = Details("Deyalasoul", "Instagram", "Deyala", "Roseflower01")
         instagram.save_detail()
         self.assertEqual(len(Details.details_list), 2)
 
@@ -101,7 +101,7 @@ class TestDetails(unittest.TestCase):
         Test case to test if objects show.
         '''
         self.new_detail.save_detail()
-        instagram = Details('Deyalasoul', 'Instagram', 'Deyala', 'Roseflower01')
+        instagram = Details("Deyalasoul", "Instagram", "Deyala", "Roseflower01")
         instagram.save_detail()
         twitter = Details('Bill', 'Twitter', 'billy', 'billyboss')
         twitter.save_detail()
@@ -154,7 +154,7 @@ class TestDetails(unittest.TestCase):
         test_detail = Details('Bill', 'Twitter', 'billy', 'billyboss')
         test_detail.save_detail()
 
-        detail_exists = Details.detail_exist('Twitter')
+        detail_exists = Details.detail_exist("Twitter")
         self.assertTrue(detail_exists)
 
 
