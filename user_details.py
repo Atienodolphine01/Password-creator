@@ -10,7 +10,7 @@ class User:
 
     users_list=[] #users will be saved here.
 
-    def _init_(self, first_name, last_name, password):
+    def __init__(self, first_name, last_name, password):
         '''
         _init_method that help us define properties for our objects
         '''

@@ -14,9 +14,9 @@ class TestUser(unittest.TestCase):
     
     def setUp(self):
         '''
-        Set up method to run before each check if pyperclip is installedtest cases.
+        Method to run before test cases.
         '''
-        self.new_user = User('Dolphine', 'Atieno', 'dolphine0123')
+        self.new_user = User("Dolphine", "Atieno", "dolphine0123")
 
     def test__init__(self):
         '''
